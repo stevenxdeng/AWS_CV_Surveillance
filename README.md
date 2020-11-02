@@ -14,7 +14,7 @@ Prerequisite
    2) Go to users
    3) Click "Add user"
    4) Copy the access key ID and secret access key after a new user is created
-   For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
+For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
 5. AWS CLI
    Download via: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 6. Configure AWS CLI
@@ -24,7 +24,7 @@ Prerequisite
    4) Condigure your secret access key
    5) Configure region (default "us-east-1")
    6) Configure output (default "json")
-   For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
    
 Build-up
 1. Import N_Template.json throgh AWS CloudFormation
