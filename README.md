@@ -3,19 +3,19 @@ Author: Hsien-wen "Steven" Deng
 This is a cloud-based Connected Vehicles (CV) surveillance applcation running in serverless architecture in Amazon Web Services (AWS). You can construct a cloud system using given AWS template and test as a client through a python script.
 
 Prerequisite
-1. Python 3.8
+1. Python 3.8\
    Download via: https://www.python.org/downloads/
-2. Python IDE
-   Recommend Pyzo: https://pyzo.org/start.html \n
-3. AWS account (AWS Eduacate may not be eligible due to lack of permission configuring CLI)
+2. Python IDE\
+   Recommend Pyzo: https://pyzo.org/start.html
+3. AWS account (AWS Eduacate may not be eligible due to lack of permission configuring CLI)\
    Login via: https://aws.amazon.com/
 4. Set up a user in AWS
    1) Go to IAM
    2) Go to users
    3) Click "Add user"
-   4) Copy the access key ID and secret access key after a new user is created
-For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
-5. AWS CLI
+   4) Copy the access key ID and secret access key after a new user is created\
+   For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
+5. AWS CLI\
    Download via: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 6. Configure AWS CLI
    1) Open cmd (Windows) or terminal (Linux)
@@ -23,8 +23,8 @@ For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide
    3) Configure your access key ID
    4) Condigure your secret access key
    5) Configure region (default "us-east-1")
-   6) Configure output (default "json")
-For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+   6) Configure output (default "json")\
+   For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
    
 Build-up
 1. Import N_Template.json throgh AWS CloudFormation
