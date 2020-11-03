@@ -6,7 +6,7 @@ Prerequisite
 1. Python 3.8
    Download via: https://www.python.org/downloads/
 2. Python IDE
-   Recommend Pyzo: https://pyzo.org/start.html
+   Recommend Pyzo: https://pyzo.org/start.html \n
 3. AWS account (AWS Eduacate may not be eligible due to lack of permission configuring CLI)
    Login via: https://aws.amazon.com/
 4. Set up a user in AWS
