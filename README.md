@@ -25,7 +25,7 @@ This is a cloud-based Connected Vehicles (CV) Surveillance Application running i
    
 ## Build-up Application
 1. From AWS Console Go to **CloudFormation**
-2. Click **Create Stack**
+2. Click **Create stack**
 3. Select **Upload a template file** and upload *CV_Surveillance_Template.json*
 4. Input a name and click **Create stack**
 
