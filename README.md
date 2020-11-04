@@ -32,7 +32,6 @@ Build-up Application
 3. Select "Upload a template file" and upload "CV_Surveillance_Template.json"
 4. Input a name and click "Create stack"
 
-Test Application
-
-Run CV_Surveillabce_Client.py: "python CV_Surveillance_Client.py"\
-*If errors show up, check names of resources (DynamoDB, Kinesis)
+Test Application\
+    Run CV_Surveillabce_Client.py: "python CV_Surveillance_Client.py"\
+    *If errors show up, check names of resources (DynamoDB, Kinesis)
