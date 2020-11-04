@@ -30,6 +30,6 @@ This is a cloud-based Connected Vehicles (CV) Surveillance Application running i
 4. Input a name and click **Create stack**
 
 ## Test Application
-1. Install boto3: `python -m pip install boto3`\ 
+1. Install boto3: `python -m pip install boto3`
 2. Run *CV_Surveillance_Client.py*: `python CV_Surveillance_Client.py`\
 *If errors show up, check names of resources (DynamoDB, Kinesis)*
