@@ -24,7 +24,7 @@ Download via: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.htm
    3) Input access key ID and secret access key copied from 4
    4) Configure region (default "us-east-1")
    5) Configure output (default "json")\
-*For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html*
+*For more details, please check: [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)*
    
 **Build-up Application** 
 1. From AWS Console Go to "CloudFormation"
@@ -33,5 +33,5 @@ Download via: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.htm
 4. Input a name and click "Create stack"
 
 **Test Application**\
-   Run CV_Surveillance_Client.py: python CV_Surveillance_Client.py\
-   *If errors show up, check names of resources (DynamoDB, Kinesis)*
+    Run CV_Surveillance_Client.py: python CV_Surveillance_Client.py\
+    *If errors show up, check names of resources (DynamoDB, Kinesis)*
