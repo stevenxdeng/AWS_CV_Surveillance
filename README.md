@@ -33,5 +33,6 @@ Build-up Application
 4. Input a name and click "Create stack"
 
 Test Application
+
 Run CV_Surveillabce_Client.py: "python CV_Surveillance_Client.py"\
 *If errors show up, check names of resources (DynamoDB, Kinesis)
