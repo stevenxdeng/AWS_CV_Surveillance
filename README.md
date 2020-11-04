@@ -2,7 +2,7 @@
 Author: Hsien-wen "Steven" Deng\
 This is a cloud-based Connected Vehicles (CV) Surveillance Application running in serverless architecture in Amazon Web Services (AWS). You can construct a cloud system using given AWS template and test as a client through a python script.
 
-Prerequisite
+**Prerequisite**
 1. Python 3.8\
    Download via: https://www.python.org/downloads/
 2. Python IDE\
@@ -26,13 +26,12 @@ Download via: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.htm
    5) Configure output (default "json")\
 For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
    
-Build-up Application 
+**Build-up Application** 
 1. From AWS Console Go to "CloudFormation"
 2. Click "Create Stack"
 3. Select "Upload a template file" and upload "CV_Surveillance_Template.json"
 4. Input a name and click "Create stack"
 
-Test Application
-
-    Run CV_Surveillabce_Client.py: "python CV_Surveillance_Client.py"\
-    *If errors show up, check names of resources (DynamoDB, Kinesis)
+**Test Application**\
+   Run CV_Surveillance_Client.py: python CV_Surveillance_Client.py
+   If errors show up, check names of resources (DynamoDB, Kinesis)
