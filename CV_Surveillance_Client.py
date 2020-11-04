@@ -5,8 +5,6 @@ import botocore
 import json
 import math
 from decimal import *
-import csv
-import os
 import random
 import time
 
