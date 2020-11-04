@@ -55,7 +55,7 @@ for i in range(10):
     print('Upload Done')
 
 kinesis_upload(my_stream,'0')
-time.sleep(1)
+time.sleep(2)
 Cloud_Feedback_download(Download_Table, '1')
 
 

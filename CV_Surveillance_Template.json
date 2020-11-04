@@ -1,0 +1,106 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Metadata:
+    Generator: "former2"
+Description: ""
+Resources:
+    KinesisStream:
+        Type: "AWS::Kinesis::Stream"
+        DeletionPolicy: "Retain"
+        Properties:
+            Name: !Sub "${LambdaFunction}_Stream"
+            RetentionPeriodHours: 24
+            ShardCount: 1
+
+    LambdaFunction:
+        Type: "AWS::Lambda::Function"
+        DeletionPolicy: "Retain"
+        Properties:
+            Description: ""
+            FunctionName: !Ref IAMRole
+            Handler: "lambda_function.lambda_handler"
+            Code:
+                S3Bucket: "cvsurveillance"
+                S3Key: "cvsurapp.zip"
+            MemorySize: 3008
+            Role: !GetAtt IAMRole.Arn
+            Runtime: "python3.8"
+            Timeout: 30
+            TracingConfig: 
+                Mode: "PassThrough"
+
+    DynamoDBTable:
+        Type: "AWS::DynamoDB::Table"
+        DeletionPolicy: "Retain"
+        Properties:
+            AttributeDefinitions: 
+              - 
+                AttributeName: "ID"
+                AttributeType: "S"
+            BillingMode: "PAY_PER_REQUEST"
+            TableName: "Vehicle_Trajectory_Database"
+            KeySchema: 
+              - 
+                AttributeName: "ID"
+                KeyType: "HASH"
+
+    DynamoDBTable2:
+        Type: "AWS::DynamoDB::Table"
+        DeletionPolicy: "Retain"
+        Properties:
+            AttributeDefinitions: 
+              - 
+                AttributeName: "Platoon"
+                AttributeType: "S"
+            BillingMode: "PAY_PER_REQUEST"
+            TableName: "Cloud_Feedback_Database"
+            KeySchema: 
+              - 
+                AttributeName: "Platoon"
+                KeyType: "HASH"
+
+    IAMRole:
+        Type: "AWS::IAM::Role"
+        DeletionPolicy: "Retain"
+        Properties:
+            Path: "/"
+            RoleName: "CV_Surveillance"
+            AssumeRolePolicyDocument: "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+            MaxSessionDuration: 3600
+            ManagedPolicyArns: 
+              - !Ref IAMManagedPolicy
+            Description: "Allows Lambda functions to call AWS services on your behalf."
+
+    IAMManagedPolicy:
+        Type: "AWS::IAM::ManagedPolicy"
+        DeletionPolicy: "Retain"
+        Properties:
+            ManagedPolicyName: "CV_Surveillance_Policy"
+            Path: "/"
+            PolicyDocument: |
+                {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "VisualEditor0",
+                            "Effect": "Allow",
+                            "Action": [
+                                "lambda:*",
+                                "dynamodb:*",
+                                "kinesis:*"
+                            ],
+                            "Resource": "*"
+                        }
+                    ]
+                }
+
+    LambdaTrigger:
+        Type: AWS::Lambda::EventSourceMapping
+        Properties: 
+            BatchSize: 100 
+            Enabled: true
+            EventSourceArn: !GetAtt KinesisStream.Arn
+            FunctionName: !GetAtt LambdaFunction.Arn
+            MaximumBatchingWindowInSeconds: 0
+            StartingPosition: LATEST 
+
+
