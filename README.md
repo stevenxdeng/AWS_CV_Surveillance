@@ -1,4 +1,4 @@
-# AWS_CV_Surveillance
+# AWS CV Surveillance
 Author: ***Hsien-wen "Steven" Deng***\
 This is a cloud-based Connected Vehicles (CV) Surveillance Application running in serverless architecture in Amazon Web Services (AWS). You can construct a cloud system using given AWS template and test as a client through a python script.
 
@@ -29,6 +29,6 @@ This is a cloud-based Connected Vehicles (CV) Surveillance Application running i
 3. Select "Upload a template file" and upload "CV_Surveillance_Template.json"
 4. Input a name and click "Create stack"
 
-**Test Application**\
+#Test Application\
     Run CV_Surveillance_Client.py: `python CV_Surveillance_Client.py`\
     *If errors show up, check names of resources (DynamoDB, Kinesis)*
