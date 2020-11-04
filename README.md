@@ -4,10 +4,9 @@ This is a cloud-based Connected Vehicles (CV) Surveillance Application running i
 
 **Prerequisite**
 1. [Python 3.8](https://www.python.org/downloads/)
-2. Python IDE\
-   Recommend [Pyzo](https://pyzo.org/start.html)
+2. Python IDE, recommend [Pyzo](https://pyzo.org/start.html)
 3. [AWS Account](https://aws.amazon.com/)
-   *AWS Educate may not be eligible due to lack of permission configuring CLI\
+   *AWS Educate may not be eligible due to lack of permission configuring CLI*\
 4. AWS User Credential 
    1) From AWS Console go to IAM
    2) Select to "users"
