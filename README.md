@@ -26,19 +26,12 @@ For more details, please check: https://docs.aws.amazon.com/IAM/latest/UserGuide
    6) Configure output (default "json")\
 For more details, please check: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
    
-Build-up
-1. Import N_Template.json through AWS CloudFormation
-2. Generate a Kinesis Stream service manually (due to limitation on Cloudformation, Kinesis Data Stream needed to be set manually)
-   1) In AWS console, go to Kinesis
-   2) Click "Create data stream"
-   3) Configure stream name and set "Number of open shards" to be "1"
-   4) Click "Create data stream"
-3. Link Lambda and Kinesis
-   1) In AWS console, go to Lambda
-   2) In functions, choose the function imported from CloudFormation
-   3) In Designer block, chooese "Add trigger"
-   4) Choose "Kinesis" and select the data stream created (Make sure "Enable trigger" is selected)
-   5) Click "Add"
+Build-up system 
+1. Go to AWS Console
+2. Select CloudFormation
+3. Click Create Stack
+4. Select "Upload a template file" and upload
+
 
 Test
 1. Open CV_Surveillance_Client.py by your Python IDE or text editor
