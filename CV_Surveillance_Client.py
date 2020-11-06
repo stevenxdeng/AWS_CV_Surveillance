@@ -46,14 +46,13 @@ def kinesis_upload(stream, data):
     )
     return
 
-
 for i in range(10):
     vspeed = round(random.uniform(6.0,20.0),2)
     Vehicle_State_upload(Upload_Table,str(i),vspeed)
     print('Upload Done')
 
 kinesis_upload(my_stream,'0')
-time.sleep(2)
+time.sleep(3)
 Cloud_Feedback_download(Download_Table, '1')
 
 
