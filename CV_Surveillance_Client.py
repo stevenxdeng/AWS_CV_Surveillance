@@ -7,6 +7,7 @@ import math
 from decimal import *
 import random
 import time
+from botocore.exceptions import ClientError
 
 #Configuration of dynamoDB Tables
 config = botocore.config.Config(max_pool_connections=100)
@@ -29,11 +30,23 @@ def Vehicle_State_upload(Table, ID, speed):
 
 #Download function
 def Cloud_Feedback_download(Table, ID):
-    response = Table.get_item(Key={'Platoon':ID})
-    ave = float(response['Item']['Average'])
-    pt = int(response['Item']['Process'])
-    print('Average is ', ave, ' m/s')
-    print('processs time is ', pt, ' ms')
+
+    flag = False
+
+    while not flag:
+        response = Table.get_item(Key={'Platoon':ID})
+
+        try:
+            ave = float(response['Item']['Average'])
+        except KeyError as e:
+            print('Retry Requesting...')
+            time.sleep(0.1)
+        else:
+            ave = float(response['Item']['Average'])
+            pt = int(response['Item']['Process'])
+            print('Average is ', ave, ' m/s')
+            print('processs time is ', pt, ' ms')
+            flag = True
 
 #Kinesis Stream function
 def kinesis_upload(stream, data):
@@ -45,14 +58,14 @@ def kinesis_upload(stream, data):
         SequenceNumberForOrdering='0'
     )
     return
-
 for i in range(10):
     vspeed = round(random.uniform(6.0,20.0),2)
     Vehicle_State_upload(Upload_Table,str(i),vspeed)
     print('Upload Done')
 
 kinesis_upload(my_stream,'0')
-time.sleep(3)
+time.sleep(1)
 Cloud_Feedback_download(Download_Table, '1')
+
 
 
