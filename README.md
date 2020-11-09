@@ -1,8 +1,8 @@
 # AWS CV Surveillance
 Author: ***Hsien-wen "Steven" Deng***\
 This is a cloud-based Connected Vehicles (CV) Surveillance Application running in serverless architecture in Amazon Web Services (AWS). 
-**Template**: The template includes a system of AWS services allows you to establish this application\
-**Test Program**: The test program is a Python script running in the client to test the availability and accessibility to your cloud application. The program first simulates sending messages from 10 vehicles (ID, speed) to the Vehicle_Trajectory_Database. Then, the program simulates a Roadside Unit (RSU) sending a Kinesis Data Stream to trigger AWS Lambda. Last, the program requests results from Cloud_Feedback_Database.
+**Template**: The template includes a system of AWS services allows you to establish this application.\
+**Test Program**: The test program is a Python script running in the client to test the availability of your cloud application. The program first simulates 10 vehicles sending Basic Safety Messages (ID, speed) to the Vehicle_Trajectory_Database. Then, the program simulates a Roadside Unit (RSU) sending a Kinesis Data Stream to trigger AWS Lambda. Last, the program requests results from Cloud_Feedback_Database.
 
 ## Prerequisite
 1. [Python 3.8](https://www.python.org/downloads/)
