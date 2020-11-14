@@ -45,7 +45,7 @@ def Cloud_Feedback_download(Table, ID):
             ave = float(response['Item']['Average'])
             pt = int(response['Item']['Process'])
             print('Average is ', ave, ' m/s')
-            print('processs time is ', pt, ' ms')
+            print('process time is ', pt, ' ms')
             flag = True
 
 #Kinesis Stream function
