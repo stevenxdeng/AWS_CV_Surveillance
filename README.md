@@ -36,7 +36,7 @@ This is a cloud-based Connected Vehicles (CV) Surveillance Application running i
 2. Run *CV_Surveillance_Client.py*: `python CV_Surveillance_Client.py`\
 *If errors show up, check names of resources (DynamoDB, Kinesis)*
 
-**Destroy Application**
-After deletion of CloudFormation, resources are still in usage, deletions of these resources are needed to reduce cost impact:\
-**DynamoDB**
+## Destroy Application**
+After deletion of CloudFormation, resources are still in usage, **deletions** of these resources are needed to reduce cost impacts:\
+**DynamoDB**\
 **Kinesis Data Stream**
